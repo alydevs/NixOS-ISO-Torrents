@@ -72,6 +72,8 @@ jobs:
           compression-level: 0
           
   release:
+    permissions:
+      contents: write
     needs: [check, torrent]
     runs-on: ubuntu-latest
     steps:
