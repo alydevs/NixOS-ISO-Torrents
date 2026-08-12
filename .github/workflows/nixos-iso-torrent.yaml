@@ -24,6 +24,7 @@ jobs:
           
       - name: Get NixOS current commit
         id: nixos-current
+        continue-on-error: true
         run: |
           version_git_sha=$(gh api repos/$GITHUB_REPOSITORY/releases/latest -q .tag_name)
           echo "$version_git_sha" | grep '{' && version_git_sha=""
