@@ -89,6 +89,7 @@ jobs:
       - name: Generate RSS feed
         run: |
           set -euo pipefail
+          apt-get install -y xmllint
 
           VERSION="${{ needs.check.outputs.version-git-sha }}"
           REPO="${{ github.repository }}"
